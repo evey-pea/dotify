@@ -3,13 +3,13 @@ import axios from 'axios'
 import {Link} from 'react-router-dom'
 
 const ViewSong = (props) => {
-
+    
     const [song, setSong] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [errorMessage, setErrorMessage] = useState("")
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/songs/${props.id}`)
+        axios.get(`http://localhost:3000/songs/${props.songId}`)
             .then(res => {
                 setIsLoading(false)
                 setSong(res.data)
